@@ -17,7 +17,7 @@ function show_menu {
         "2" "模型管理" \
         "3" "扩展管理" \
         "4" "环境" \
-        "5" "设置" 3>&1 1>&2 2>&3
+        "5" "更新" 3>&1 1>&2 2>&3
 }
 
 while true; do
@@ -1213,7 +1213,7 @@ case $choice in
         lang=$(whiptail --title "语言设置" --menu "选择语言" 10 $DIALOG_WIDTH 2 \
               "1" "简体中文" \
               "2" "English" 3>&1 1>&2 2>&3)
-        [ "$lang" = "1" ] && echo "语言设置为中文" || echo "Language set to English"
+        [ "$lang" = "1" ] && echo "语言设置为中文" || echo "貌似并没有英文版"
         ;;
     "3")
         py_version=$(python3 --version 2>&1 || echo "未安装")
@@ -1221,16 +1221,41 @@ case $choice in
         ;;
     "4")
         whiptail --title "备份" --msgbox "开始备份Python环境..." 8 $DIALOG_WIDTH
-        # 这里添加实际备份代码
+        cd /root/
+        echo "这将覆盖原有备份你确认吗？ctrl+c强制退出"
+        read wyy
+        tar -czvf venv.tar.gz /root/comfyui
+        echo "备份完成，按任意键继续......"
+        read wyy
         ;;
     "5")
         whiptail --title "还原" --msgbox "正在还原Python系统..." 8 $DIALOG_WIDTH
-        # 这里添加实际换源代码
+        
+        echo "这将覆盖原有环境你确认吗？ctrl+c强制退出"
+        read wyy
+        tar -xzvf venv.tar.gz
+        echo "还原完成，按任意键继续......"
+        read wyy
+        
+        
+        
         ;;
     "6")
         if whiptail --title "警告" --yesno "确定要重置Python环境吗？" 8 $DIALOG_WIDTH; then
             whiptail --title "重置" --msgbox "开始重置环境..." 8 $DIALOG_WIDTH
-            # 这里添加实际重置代码
+            rm -rf /root/comfyui
+python3 -m venv comfyui
+source comfyui/bin/activate
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+cd ComfyUI
+pip3 install -r requirements.txt
+
+
+source comfyui/bin/activate
+            
+            
+            
+            
         fi
         ;;
     *)
@@ -1245,8 +1270,19 @@ esac
                 
                 ;;
             "5")
-                echo "你选择了设置操作。"
-                break
+            echo "你确定要更新吗？（可能会有未知的bug）ctrl+c强制退出"
+            read wyy
+                cd /home/sd/cohui/
+                rm -rf android-comfyui-zerotermux
+                git clone https://github.proxy.class3.fun/https://github.com/LY504720/android-comfyui-zerotermux.git
+                cp -r /home/sd/cohui/android-comfyui-zerotermux/dmx /home/sd/dmx
+                cp -r /home/sd/cohui/android-comfyui-zerotermux/dcj /home/sd/cohui/dcj
+                cp /home/sd/cohui/android-comfyui-zerotermux/home.sh /home/qd/home.sh
+                rm -rf /home/sd/cohui/android-comfyui-zerotermux
+                echo "更新完成，点击任意键继续....."
+                read wyy
+                
+                
                 ;;
             *)
                 break
