@@ -25,11 +25,9 @@ cd /root/
 rm -rf /root/comfyui
 python3 -m venv comfyui
 source comfyui/bin/activate
-pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+pip3 install torch torchvision torchaudio --index-url -i https://pypi.tuna.tsinghua.edu.cn/simple
 cd ComfyUI
-pip3 install -r requirements.txt
-
-
+pip3 install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 source comfyui/bin/activate
 
 
