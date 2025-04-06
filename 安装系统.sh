@@ -22,6 +22,7 @@ case $? in
     rm -rf /home/sd/cohui/android-comfyui-zerotermux
 rm -rf /root/comfyui
 cd /root/
+rm -rf /root/comfyui
 python3 -m venv comfyui
 source comfyui/bin/activate
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
