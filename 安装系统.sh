@@ -14,16 +14,13 @@ whiptail --title "确认" --yesno "您确定要安装comfyui吗？（这将会�
 case $? in
     0) 
     cd /home/sd/cohui/
-                rm -rf android-comfyui-zerotermux
-                git clone https://github.proxy.class3.fun/https://github.com/LY504720/android-comfyui-zerotermux.git
-                cp -r /home/sd/cohui/android-comfyui-zerotermux/dmx /home/sd/dmx
-                cp -r /home/sd/cohui/android-comfyui-zerotermux/dcj /home/sd/cohui/dcj
-                cp /home/sd/cohui/android-comfyui-zerotermux/home.sh /home/qd/home.sh
-                
-                rm -rf /home/sd/cohui/android-comfyui-zerotermux
-                
-                
-rm -rf /root/comfyui
+    git clone https://github.proxy.class3.fun/https://github.com/LY504720/android-comfyui-zerotermux.git
+    cp /home/sd/cohui/android-comfyui-zerotermux/dmx /home/sd/dmx
+    cp /home/sd/cohui/android-comfyui-zerotermux/dcj /home/sd/cohui/dcj
+    cp /home/sd/cohui/android-comfyui-zerotermux/home.sh /home/qd/home.sh
+    rm /home/sd/cohui/android-comfyui-zerotermux
+rm /root/comfyui
+cd /root/
 python3 -m venv comfyui
 source comfyui/bin/activate
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
