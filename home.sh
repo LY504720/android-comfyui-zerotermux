@@ -1275,10 +1275,11 @@ esac
                 cd /home/sd/cohui/
                 rm -rf android-comfyui-zerotermux
                 git clone https://github.proxy.class3.fun/https://github.com/LY504720/android-comfyui-zerotermux.git
-                cp -r /home/sd/cohui/android-comfyui-zerotermux/dmx /home/sd/dmx
-                cp -r /home/sd/cohui/android-comfyui-zerotermux/dcj /home/sd/cohui/dcj
-                cp /home/sd/cohui/android-comfyui-zerotermux/home.sh /home/qd/home.sh
-                rm -rf /home/sd/cohui/android-comfyui-zerotermux
+                cp /home/sd/cohui/android-comfyui-zerotermux/dmx /home/sd/dmx
+    cp /home/sd/cohui/android-comfyui-zerotermux/dcj /home/sd/cohui/dcj
+    cp /home/sd/cohui/android-comfyui-zerotermux/home.sh /home/qd/home.sh
+    cp /home/sd/cohui/android-comfyui-zerotermux/安装系统.sh /home/qd/安装系统.sh
+    rm /home/sd/cohui/android-comfyui-zerotermux
                 echo "更新完成，点击任意键继续....."
                 read wyy
                 
