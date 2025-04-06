@@ -18,6 +18,7 @@ case $? in
     cp -r /home/sd/cohui/android-comfyui-zerotermux/dmx /home/sd/dmx
     cp -r /home/sd/cohui/android-comfyui-zerotermux/dcj /home/sd/cohui/dcj
     cp -r /home/sd/cohui/android-comfyui-zerotermux/home.sh /home/qd/home.sh
+    cp -r /home/sd/cohui/android-comfyui-zerotermux/home.sh /home/sd/cohui/home.sh
     cp /home/sd/cohui/android-comfyui-zerotermux/安装系统.sh /home/qd/安装系统.sh
     rm -rf /home/sd/cohui/android-comfyui-zerotermux
 rm -rf /root/comfyui
