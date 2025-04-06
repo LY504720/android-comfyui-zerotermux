@@ -15,12 +15,12 @@ case $? in
     0) 
     cd /home/sd/cohui/
     git clone https://github.proxy.class3.fun/https://github.com/LY504720/android-comfyui-zerotermux.git
-    cp /home/sd/cohui/android-comfyui-zerotermux/dmx /home/sd/dmx
-    cp /home/sd/cohui/android-comfyui-zerotermux/dcj /home/sd/cohui/dcj
-    cp /home/sd/cohui/android-comfyui-zerotermux/home.sh /home/qd/home.sh
+    cp -r /home/sd/cohui/android-comfyui-zerotermux/dmx /home/sd/dmx
+    cp -r /home/sd/cohui/android-comfyui-zerotermux/dcj /home/sd/cohui/dcj
+    cp -r /home/sd/cohui/android-comfyui-zerotermux/home.sh /home/qd/home.sh
     cp /home/sd/cohui/android-comfyui-zerotermux/安装系统.sh /home/qd/安装系统.sh
-    rm /home/sd/cohui/android-comfyui-zerotermux
-rm /root/comfyui
+    rm -rf /home/sd/cohui/android-comfyui-zerotermux
+rm -rf /root/comfyui
 cd /root/
 python3 -m venv comfyui
 source comfyui/bin/activate
